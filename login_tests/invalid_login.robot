@@ -1,5 +1,8 @@
 *** Settings ***
 Resource    resource.robot
+Suite Setup    Open Browser To Login Page
+Suite Teardown    Close Browser
+Test Setup    Go To Login Page
 Test Template    Login With Invalid Credentials Leads To Error Page
 
 
@@ -28,6 +31,7 @@ Login With Invalid Credentials Leads To Error Page
     [Arguments]    ${username}    ${password}
     Input Username    ${username}
     Input Secret    ${password}
+    Submit Credentials
     Error Page Should Be Open
 
 Error Page Should Be Open
