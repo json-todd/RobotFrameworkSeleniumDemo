@@ -1,5 +1,6 @@
 *** Settings ***
 Resource    resource.robot
+Suite Teardown    Close Browser
 
 *** Test Cases ***
 Login With Correct Credentials Leads To Welcome Page
