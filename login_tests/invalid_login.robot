@@ -1,6 +1,6 @@
 *** Settings ***
 Resource    resource.robot
-Test Template    Fill Login Credentials
+Test Template    Login With Invalid Credentials Leads To Error Page
 
 
 *** Test Cases ***
@@ -23,7 +23,7 @@ Valid Username Empty Password      ${VALID USER}    ${EMPTY}
 
 *** Keywords ***
 # Define test template
-Fill Login Credentials
+Login With Invalid Credentials Leads To Error Page
     [Documentation]    Aggregate input username and secret into one keywords for data-driven template
     [Arguments]    ${username}    ${password}
     Input Username    ${username}
