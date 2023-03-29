@@ -1,5 +1,6 @@
 *** Settings ***
 Resource    resource.robot
+Test Template    Fill Login Credentials
 
 
 *** Test Cases ***
@@ -16,3 +17,11 @@ Resource    resource.robot
     #   Invalid      Valid
     #   EMPTY        Valid    
     #   EMPTY        EMPTY
+
+*** Keywords ***
+# Define test template
+Fill Login Credentials
+    [Documentation]    Aggregate input username and secret into one keywords for data-driven template
+    [Arguments]    ${username}    ${password}
+    Input Username    ${username}
+    Input Secret    ${password}
